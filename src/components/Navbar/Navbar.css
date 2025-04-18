@@ -10,3 +10,40 @@
     transparent);
     z-index: 1;
 }
+.navbar-left{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.navbar-left img{
+    width: 90px;
+}
+.navbar-left ul{
+    display: flex;
+    gap: 15px;
+    list-style: none;
+}
+.navbar-left ul li{
+    cursor: pointer;
+}
+.navbar-right{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.navbar-right :icons{
+    width: 10px;
+    cursor: pointer;
+}
+.navbar-right .profile{
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.navbar-profile{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}

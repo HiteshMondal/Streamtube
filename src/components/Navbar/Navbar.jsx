@@ -3,7 +3,7 @@ import './Navbar.css'
 import logo from '../../assets/logo.jpg'
 import search from '../../assets/search.png'
 import bell from '../../assets/bell.png'
-import profile from '../../assets/profile.jpg'
+import profile from '../../assets/profile.png'
 import caret from '../../assets/caret.png'
 
 
