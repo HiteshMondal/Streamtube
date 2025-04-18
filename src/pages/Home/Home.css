@@ -1,0 +1,12 @@
+.hero{
+    position: relative;
+}
+.rgb{
+    width: 100%;
+    mask-image: linear-gradient(to right, transparent, black 75%);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 75%);
+}
+.star{
+    position: relative;
+    width: 100%;
+}

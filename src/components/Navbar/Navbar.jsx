@@ -1,6 +1,6 @@
 import React from 'react'
 import './Navbar.css'
-import logo from '../../assets/logo.jpg'
+import logo from '../../assets/logo.png'
 import search from '../../assets/search.png'
 import bell from '../../assets/bell.png'
 import profile from '../../assets/profile.png'
@@ -27,8 +27,11 @@ const Navbar = () => {
         <p>Children</p>
         <img src={bell} alt="" className='icons'/>
         <div className="navbar-profile">
-        <img src={profile} alt="" className='profile'/>
-        <img src={caret} alt="" className='profile'/>
+          <img src={profile} alt="" className='profile'/>
+          <img src={caret} alt="" className='profile'/>
+          <div className="dropdown">
+            <p>Sign in!</p>
+          </div>
         </div>
       </div>
     </div>
