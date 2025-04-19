@@ -1,5 +1,5 @@
 *{
-    background-color: black;
+    background-color: rgb(12, 1, 1);
 }
 .div-btns{
     display: flex;
@@ -11,8 +11,9 @@
     align-items: center;
     border-radius: 10px;
     font-size: 30px;
-    background: red;
+    background: transparent;
     border: none;
+    color: white;
 }
 .div-btns .dark-btn{
     display: inline-flex;
@@ -22,10 +23,14 @@
     border-radius: 10px;
     cursor: pointer;
     border: none;
+    color: white;
 }
 .div-btns .btn:hover{
     background: #ffffffbf;
 }
 .div-btns .dark-btn:hover{
     background: #ffffffbf;
+}
+.more-cards{
+    padding: 6%;
 }

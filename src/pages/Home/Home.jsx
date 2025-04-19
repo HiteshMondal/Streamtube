@@ -1,7 +1,6 @@
 import React from 'react'
 import './Home.css'
 import Navbar from '../../components/Navbar/Navbar'
-import rgb from '../../assets/rgb.jpg'
 import play from '../../assets/play.png'
 import info from '../../assets/info.png'
 import TitleCards from '../../components/TitleCards/TitleCards'
@@ -20,5 +19,6 @@ const Home = () => {
     </div>
   )
 }
+
 
 export default Home

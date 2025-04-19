@@ -5,7 +5,7 @@
     justify-content: space-between;
     position: fixed;
     font-size: 14px;
-    color: wheat;
+    color: rgb(243, 218, 172);
     z-index: 1;
 }
 .navbar-left{
