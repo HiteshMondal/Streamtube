@@ -10,3 +10,8 @@
     position: relative;
     width: 100%;
 }
+.div-btns{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 50px;
+}
