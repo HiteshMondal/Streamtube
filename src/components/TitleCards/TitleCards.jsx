@@ -4,9 +4,9 @@ import cards_data from '../../assets/cards/Cards_data'
 
 const TitleCards = () => {
   return (
-    <div className='titlecards'>
-      <h2>Trending</h2>
-      <div className='card-list'>
+    <div className='title-cards'>
+      <h2>{title?title:"Trending"}</h2>
+      <div className='card-list' ref={cardsRef}>
         {cards_data.map((card, index) => {
           return <div className='card' key={index}>
             <img src={card.image} alt="" />
