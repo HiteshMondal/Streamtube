@@ -1,19 +1,19 @@
 import React, { useEffect, useRef } from 'react'
 import './TitleCards.css'
 import cards_data from '../../assets/cards/Cards_data'
-
-const TitleCards = ({title, category}) => {
   
+  const TitleCards = ({title, category}) => {
+
     const cardsRef = useRef();
     const handleWheel = (event) => {
-      event.preventDefault();
-      cardsRef.current.scrollLeft += event.deltaY;
-    }
+    event.preventDefault();
+    cardsRef.current.scrollLeft += event.deltaY;
+  }
 
-    useEffect(() => {
-      cardsRef.current.addEventListener('wheel', handleWheel);
-    },[])
-
+  useEffect(() => {
+    cardsRef.current.addEventListener('wheel', handleWheel);
+  },[])
+  
   return (
     <div className='title-cards'>
       <h2>{title?title:"Trending"}</h2>

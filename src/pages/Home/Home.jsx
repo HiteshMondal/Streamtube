@@ -12,8 +12,6 @@ const Home = () => {
       <Navbar />
           <p>A Quick Brown Fox Jumps Over The Lazy Dog</p>
           <div className="div-btns">
-            <button className='btn'><img src={play} alt=""/>Play</button>
-            <button className='dark-btn'><img src={info} alt=""/>More Info</button>
             <TitleCards />
           </div>
     </div>
