@@ -17,10 +17,10 @@ const Home = () => {
             </div>
       </div>
       <div>
-        <TitleCards />
-        <TitleCards />
-        <TitleCards />
-        <TitleCards />
+        <TitleCards title={"Trending"}/>
+        <TitleCards title={"Latest"}/>
+        <TitleCards title={"Popular"}/>
+        <TitleCards title={"Recommended"}/>
       </div>
     </div>  
   )
