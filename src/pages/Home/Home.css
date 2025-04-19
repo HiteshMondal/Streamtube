@@ -1,17 +1,31 @@
-.hero{
-    position: relative;
-}
-.rgb{
-    width: 100%;
-    mask-image: linear-gradient(to right, transparent, black 75%);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 75%);
-}
-.star{
-    position: relative;
-    width: 100%;
+*{
+    background-color: black;
 }
 .div-btns{
     display: flex;
-    gap: 10px;
-    margin-bottom: 50px;
+    gap: 50px;
+}
+.div-btns .btn{
+    width: 150px;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    font-size: 30px;
+    background: red;
+    border: none;
+}
+.div-btns .dark-btn{
+    display: inline-flex;
+    align-items: center;
+    font-size: 30px;
+    background: transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+}
+.div-btns .btn:hover{
+    background: #ffffffbf;
+}
+.div-btns .dark-btn:hover{
+    background: #ffffffbf;
 }

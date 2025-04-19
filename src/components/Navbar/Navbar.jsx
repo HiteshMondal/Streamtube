@@ -23,12 +23,12 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-right">
-        <img src={search} alt="" className='icons'/>
+        <img src={search} alt="" className='search'/>
         <p>Children</p>
-        <img src={bell} alt="" className='icons'/>
+        <img src={bell} alt="" className='bell'/>
         <div className="navbar-profile">
           <img src={profile} alt="" className='profile'/>
-          <img src={caret} alt="" className='profile'/>
+          <img src={caret} alt="" className='caret'/>
           <div className="dropdown">
             <p>Sign in!</p>
           </div>
