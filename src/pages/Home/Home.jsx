@@ -1,8 +1,6 @@
 import React from 'react'
 import './Home.css'
 import Navbar from '../../components/Navbar/Navbar'
-import play from '../../assets/play.png'
-import info from '../../assets/info.png'
 import TitleCards from '../../components/TitleCards/TitleCards'
 import Footer from '../../components/Footer/Footer'
 
