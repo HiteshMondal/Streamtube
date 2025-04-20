@@ -75,3 +75,12 @@
     font-weight: 400;
     cursor: pointer;
 }
+@media (max-width: 500px){
+    .login{
+        padding: 15px 5%;
+    }
+    .login-form{
+        padding: 50px;
+        margin-top: 30px;
+    }
+}

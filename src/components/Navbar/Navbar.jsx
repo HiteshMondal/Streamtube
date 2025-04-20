@@ -4,6 +4,7 @@ import logo from '../../assets/logo.png'
 import search from '../../assets/search.png'
 import bell from '../../assets/bell.png'
 import profile from '../../assets/profile.png'
+import { logout } from '../../firebase'
 
 const Navbar = () => {
   const navRef = useRef();
@@ -36,7 +37,7 @@ const Navbar = () => {
         <div className="navbar-profile">
           <img src={profile} alt="" className='profile'/>
           <div className="dropdown">
-            <p>Sign in!</p>
+            <p onClick={() => {logout()}}>Sign in!</p>
           </div>
         </div>
       </div>

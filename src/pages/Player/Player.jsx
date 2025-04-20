@@ -19,9 +19,9 @@ const Player = () => {
     method: 'GET',
     headers: {
       accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4YTMwNWZiMWVhNmYzMmMwOTE1M2RlMmZlY2QwNDc4YiIsIm5iZiI6MTc0NTA4NDA4OC42NTc5OTk4LCJzdWIiOiI2ODAzZGViOGQzMTdiZTVlNWM5OTczZGUiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.6jlYOtyIMw7gmFKtyfjX37RHoqZlhcBx53lM9cOQUEU'
+      Authorization: `Bearer ${import.meta.env.VITE_TMDB_API_TOKEN}`,
     }
-  };
+  };  
 
   useEffect(() => {
     fetch(`https://api.themoviedb.org/3/movie/${id}/videos?language=en-US`, options)
