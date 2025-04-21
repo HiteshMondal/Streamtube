@@ -5,8 +5,29 @@ import search from '../../assets/search.png'
 import bell from '../../assets/bell.png'
 import profile from '../../assets/profile.png'
 import { logout } from '../../firebase'
+import { useNavigate } from 'react-router-dom'
 
-const Navbar = () => {
+const Navbar = ({ onCategoryChange}) => {
+  const categories = [
+    { label: 'Home', value: 'now_playing' },
+    { label: 'Programming', value: '28' },
+    { label: 'Linux', value: '99' },
+    { label: 'Culture', value: '10752' },
+    { label: 'Blog', value: '35' },
+    { label: 'Portfolio', value: '18' }
+  ];
+
+  const navigate = useNavigate();
+
+  const handleClick = (cat) => {
+    if (cat.label === "Home") {
+      navigate('/');
+      window.location.reload(); // Refresh the entire app
+    } else {
+      onCategoryChange(cat);
+    }
+  };
+
   const navRef = useRef();
   useEffect(() => {
     window.addEventListener('scroll', () => {
@@ -17,17 +38,20 @@ const Navbar = () => {
       }
     })
   }, [])
+
+
+
   return (
     <div ref={navRef}className='navbar'>
       <div className="navbar-left">
         <img src={logo} alt="" />
         <ul>
-          <li>Home</li>
+          <li><a href="/">Home</a></li>
           <li>Programming</li>
           <li>Linux</li>
           <li>Culture</li>
           <li>Blog</li>
-          <li>Portfolio</li>
+          <li>Portfolio</li> 
         </ul>
       </div>
       <div className="navbar-right">

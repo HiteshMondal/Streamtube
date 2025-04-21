@@ -19,6 +19,7 @@ const Home = () => {
         <TitleCards title={"upcoming"} category={"upcoming"}/>
         <TitleCards title={"Popular"} category={"popular"}/>
       </div>
+      
       <Footer/>
     </div>  
   )
