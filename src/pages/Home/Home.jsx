@@ -9,7 +9,6 @@ const Home = () => {
     <div>
       <div className='home'>
         <Navbar />
-            <p>A Quick Brown Fox Jumps Over The Lazy Dog</p>
             <div className="div-btns">
               <TitleCards />
             </div>

@@ -1,4 +1,4 @@
-*{
+body {
     background-color: rgb(12, 1, 1);
 }
 .div-btns{
@@ -35,6 +35,7 @@
     padding: 6%;
 }
 @media (max-width: 500px){
+    
     .footer-icons img{
         width: 25px;
     }
