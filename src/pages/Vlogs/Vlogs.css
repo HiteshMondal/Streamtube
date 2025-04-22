@@ -1,0 +1,44 @@
+.vlogs {
+    padding-top: 80px;
+    background-color: #000;
+    color: white;
+    min-height: 100vh;
+  }
+  
+  .vlogs h1 {
+    margin: 20px;
+    font-size: 2rem;
+    text-align: center;
+  }
+  
+  .video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .video-card {
+    text-decoration: none;
+    color: white;
+    background-color: #111;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  .video-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .video-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .video-card h3 {
+    padding: 10px;
+    font-size: 16px;
+  }
+  

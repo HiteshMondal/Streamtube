@@ -1,0 +1,45 @@
+.culture-page{
+  padding: 40px 5%;
+  background-color: #0c0101;
+  min-height: 100vh;
+  color: white;
+  margin-top: 80px;
+  padding-top: 80px;
+}
+.culture-container {
+  padding: 100px 5% 50px;
+  background-color: #0c0101;
+  color: white;
+  min-height: 100vh;
+}
+
+.culture-videos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.culture-video-card {
+  text-decoration: none;
+  color: white;
+  background: #1e1e1e;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.culture-video-card:hover {
+  transform: scale(1.05);
+}
+
+.culture-thumbnail {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.culture-title {
+  padding: 10px;
+  font-size: 16px;
+}

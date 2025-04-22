@@ -6,7 +6,7 @@ import bell from '../../assets/bell.png'
 import profile from '../../assets/profile.png'
 import { logout } from '../../firebase'
 import { useNavigate } from 'react-router-dom'
-import { Link } from 'react-router-dom';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Navbar = ({ onCategoryChange}) => {
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ const Navbar = ({ onCategoryChange}) => {
   const handleClick = (cat) => {
     if (cat.label === "Home") {
       navigate('/');
-      window.location.reload(); // Refresh the entire app
+      window.location.reload(); 
     } else {
       onCategoryChange(cat);
     }
@@ -36,11 +36,11 @@ const Navbar = ({ onCategoryChange}) => {
       <div className="navbar-left">
         <img src={logo} alt="" />
         <ul>
-          <li><a href="/">Home</a></li>
+          <li onClick={() => navigate('/')}>Home</li>
           <li onClick={() => navigate("/programming")}>Programming</li>
-          <li>Linux</li>
-          <li>Culture</li>
-          <li>Blog</li>
+          <li onClick={() => navigate('/linux')}>Linux</li>
+          <li onClick={() => navigate('/culture')}>Culture</li>
+          <li onClick={() => navigate('/vlogs')} >Vlogs</li>
           <li>Portfolio</li> 
         </ul>
       </div>

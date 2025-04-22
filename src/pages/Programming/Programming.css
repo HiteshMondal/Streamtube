@@ -1,8 +1,9 @@
 .programming-page {
-  padding: 40px 5%;
+  padding-top: 80px;
   background-color: #0c0101;
   min-height: 100vh;
   color: white;
+  margin-top: 80px;
 }
 
 .programming-page h2 {

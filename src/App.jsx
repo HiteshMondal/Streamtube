@@ -8,6 +8,11 @@ import { auth } from './firebase'
 import {ToastContainer, toast} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import Programming from './pages/Programming/Programming';
+import Linux from './pages/Linux/Linux';
+import Navbar from './components/Navbar/Navbar'
+import Culture from './pages/Culture/Culture';
+import Vlogs from './pages/Vlogs/Vlogs';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
   const navigate = useNavigate();
@@ -27,11 +32,15 @@ const App = () => {
   return (
   <div>
     <ToastContainer theme='dark' />
+    <Navbar />
     <Routes>
       <Route path='/' element={<Home />}/>
       <Route path='/login' element={<Login />}/>
       <Route path='/player/:id' element={<Player />}/>
       <Route path="/programming" element={<Programming />}/>
+      <Route path='/linux' element={<Linux />} />
+      <Route path="/culture" element={<Culture />} />
+      <Route path="/vlogs" element={<Vlogs />} />
     </Routes>
   </div>
   )

@@ -1,29 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import './Programming.css'; 
+import './Culture.css';
 
-const Programming = () => {
+const Culture = () => {
   const [videos, setVideos] = useState([]);
   const apiKey = import.meta.env.VITE_YOUTUBE_API_KEY;
 
   useEffect(() => {
     const fetchVideos = async () => {
       try {
-        const res = await axios.get(
-          `https://www.googleapis.com/youtube/v3/search`,
-          {
-            params: {
-              part: 'snippet',
-              maxResults: 50,
-              q: 'programming',
-              type: 'video',
-              key: apiKey,
-            },
+        const res = await axios.get(`https://www.googleapis.com/youtube/v3/search`, {
+          params: {
+            part: 'snippet',
+            q: 'world cultures traditions countries',
+            type: 'video',
+            maxResults: 50,
+            key: apiKey
           }
-        );
+        });
         setVideos(res.data.items);
       } catch (error) {
-        console.error('Error fetching videos:', error);
+        console.error('Error fetching culture videos:', error);
       }
     };
 
@@ -31,22 +28,23 @@ const Programming = () => {
   }, []);
 
   return (
-    <div className="programming-page">
-      <h2>Programming Videos</h2>
-      <div className="video-grid">
+    <div className="culture-container">
+      <h2>Culture Videos</h2>
+      <div className="culture-videos">
         {videos.map((video) => (
           <a
             key={video.id.videoId}
             href={`https://www.youtube.com/watch?v=${video.id.videoId}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="video-card"
+            className="culture-video-card"
           >
             <img
-              src={video.snippet.thumbnails.high.url}
+              src={video.snippet.thumbnails.medium.url}
               alt={video.snippet.title}
+              className="culture-thumbnail"
             />
-            <p>{video.snippet.title}</p>
+            <h3 className="culture-title">{video.snippet.title}</h3>
           </a>
         ))}
       </div>
@@ -54,4 +52,4 @@ const Programming = () => {
   );
 };
 
-export default Programming;
+export default Culture;

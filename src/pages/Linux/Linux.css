@@ -1,0 +1,52 @@
+.linux-page {
+    padding: 40px 5%;
+    background-color: #0c0101;
+    min-height: 100vh;
+    color: white;
+    margin-top: 80px;
+    padding-top: 80px;
+  }
+  
+  .linux-page h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #00ffae;
+  }
+  
+  .video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+  }
+  
+  .video-card {
+    background-color: #1a1a1a;
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: 100%;
+    max-width: 320px;
+  }
+  
+  .video-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .video-card p {
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+  }
+  
+  .video-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 255, 174, 0.3);
+  }
+  

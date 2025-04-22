@@ -15,7 +15,7 @@
     left: 20px;
     width: 50px;
     cursor: pointer;
-    z-index: 2;
+    z-index: 90;
 }
 
 .player iframe {
@@ -35,7 +35,6 @@
     color: white;
 }
 
-/* Responsive design */
 @media (max-width: 600px) {
     .player iframe {
         width: 95vw;

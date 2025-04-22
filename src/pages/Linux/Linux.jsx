@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import './Linux.css';
 import axios from 'axios';
-import './Programming.css'; 
 
-const Programming = () => {
+const Linux = () => {
   const [videos, setVideos] = useState([]);
   const apiKey = import.meta.env.VITE_YOUTUBE_API_KEY;
 
@@ -10,20 +10,18 @@ const Programming = () => {
     const fetchVideos = async () => {
       try {
         const res = await axios.get(
-          `https://www.googleapis.com/youtube/v3/search`,
-          {
+          `https://www.googleapis.com/youtube/v3/search`, {
             params: {
               part: 'snippet',
-              maxResults: 50,
-              q: 'programming',
-              type: 'video',
+              q: 'Linux tutorials',
               key: apiKey,
-            },
-          }
-        );
+              maxResults: 50,
+              type: 'video'
+            }
+        });
         setVideos(res.data.items);
       } catch (error) {
-        console.error('Error fetching videos:', error);
+        console.error("Error fetching Linux videos:", error);
       }
     };
 
@@ -31,16 +29,16 @@ const Programming = () => {
   }, []);
 
   return (
-    <div className="programming-page">
-      <h2>Programming Videos</h2>
+    <div className="linux-page">
+      <h2>Linux Videos</h2>
       <div className="video-grid">
         {videos.map((video) => (
           <a
+            className="video-card"
             key={video.id.videoId}
             href={`https://www.youtube.com/watch?v=${video.id.videoId}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="video-card"
           >
             <img
               src={video.snippet.thumbnails.high.url}
@@ -54,4 +52,4 @@ const Programming = () => {
   );
 };
 
-export default Programming;
+export default Linux;
