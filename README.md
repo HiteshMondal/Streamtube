@@ -31,7 +31,7 @@ A modern YouTube-style streaming platform built with **React**, **Firebase**, an
 ## 🔧 Installation
 
 
-git clone https://github.com/yourusername/streamtube.git
+git clone https://github.com/HiteshMondal/Streamtube.git
 cd streamtube
 npm install
 
