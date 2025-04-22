@@ -1,16 +1,15 @@
 import React, { useEffect, useRef } from 'react'
 import './Navbar.css'
 import logo from '../../assets/logo.png'
-import search from '../../assets/search.png'
-import bell from '../../assets/bell.png'
+import searchIcon from '../../assets/search.png'
 import profile from '../../assets/profile.png'
 import { logout } from '../../firebase'
 import { useNavigate } from 'react-router-dom'
 import 'react-toastify/dist/ReactToastify.css';
+import { useState } from 'react';
 
 const Navbar = ({ onCategoryChange}) => {
   const navigate = useNavigate();
-
   const handleClick = (cat) => {
     if (cat.label === "Home") {
       navigate('/');
@@ -18,6 +17,15 @@ const Navbar = ({ onCategoryChange}) => {
     } else {
       onCategoryChange(cat);
     }
+  };
+  const [searchTerm, setSearchTerm] = useState('');
+  const handleSearch = () => {
+    if (searchTerm.trim()) {
+      navigate(`/search?query=${searchTerm}`);
+    } else {
+      alert("Please enter a search term");
+    }
+    navigate(`/search?query=${searchTerm}`);
   };
 
   const navRef = useRef();
@@ -45,9 +53,16 @@ const Navbar = ({ onCategoryChange}) => {
         </ul>
       </div>
       <div className="navbar-right">
-        <img src={search} alt="" className='search'/>
-        <p>Search</p>
-        <img src={bell} alt="" className='bell'/>
+      <input
+        type="text"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        placeholder="Search for videos"
+        className="search-input"
+      />
+      <button onClick={handleSearch} className="search-button">
+        <img src={searchIcon} alt="Search" className="search-icon" />
+      </button>
         <div className="navbar-profile">
           <img src={profile} alt="" className='profile'/>
           <div className="dropdown">
