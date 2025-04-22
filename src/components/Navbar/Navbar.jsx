@@ -49,7 +49,6 @@ const Navbar = ({ onCategoryChange}) => {
           <li onClick={() => navigate('/linux')}>Linux</li>
           <li onClick={() => navigate('/culture')}>Culture</li>
           <li onClick={() => navigate('/vlogs')} >Vlogs</li>
-          <li>Portfolio</li> 
         </ul>
       </div>
       <div className="navbar-right">
