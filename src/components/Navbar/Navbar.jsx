@@ -6,17 +6,9 @@ import bell from '../../assets/bell.png'
 import profile from '../../assets/profile.png'
 import { logout } from '../../firebase'
 import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 const Navbar = ({ onCategoryChange}) => {
-  const categories = [
-    { label: 'Home', value: 'now_playing' },
-    { label: 'Programming', value: '28' },
-    { label: 'Linux', value: '99' },
-    { label: 'Culture', value: '10752' },
-    { label: 'Blog', value: '35' },
-    { label: 'Portfolio', value: '18' }
-  ];
-
   const navigate = useNavigate();
 
   const handleClick = (cat) => {
@@ -39,15 +31,13 @@ const Navbar = ({ onCategoryChange}) => {
     })
   }, [])
 
-
-
   return (
     <div ref={navRef}className='navbar'>
       <div className="navbar-left">
         <img src={logo} alt="" />
         <ul>
           <li><a href="/">Home</a></li>
-          <li>Programming</li>
+          <li onClick={() => navigate("/programming")}>Programming</li>
           <li>Linux</li>
           <li>Culture</li>
           <li>Blog</li>

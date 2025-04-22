@@ -4,7 +4,6 @@ import logo from '../../assets/logo.png'
 import { login, signup } from '../../firebase'
 
 const Login = () => {
-  
   const [signState, SetSignState] = useState("Sign In");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");

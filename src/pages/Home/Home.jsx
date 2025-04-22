@@ -15,8 +15,8 @@ const Home = () => {
       </div>
       <div>
         <TitleCards title={"Recommended"} category={"now_playing"}/>
-        <TitleCards title={"top_rated"} category={"top_rated"} />
-        <TitleCards title={"upcoming"} category={"upcoming"}/>
+        <TitleCards title={"Top Rated"} category={"top_rated"} />
+        <TitleCards title={"Upcoming"} category={"upcoming"}/>
         <TitleCards title={"Popular"} category={"popular"}/>
       </div>
       
