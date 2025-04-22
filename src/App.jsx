@@ -12,7 +12,8 @@ import Linux from './pages/Linux/Linux';
 import Navbar from './components/Navbar/Navbar'
 import Culture from './pages/Culture/Culture';
 import Vlogs from './pages/Vlogs/Vlogs';
-import 'react-toastify/dist/ReactToastify.css';
+import TermsOfUse from './pages/TermsOfUse/TermsOfUse';
+
 
 const App = () => {
   const navigate = useNavigate();
@@ -41,6 +42,7 @@ const App = () => {
       <Route path='/linux' element={<Linux />} />
       <Route path="/culture" element={<Culture />} />
       <Route path="/vlogs" element={<Vlogs />} />
+      <Route path="/terms" element={<TermsOfUse />} />
     </Routes>
   </div>
   )

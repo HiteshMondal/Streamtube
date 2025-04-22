@@ -12,13 +12,29 @@
     width: 30px;
     cursor: pointer;
 }
-.footer ul{
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 20px;
+.footer ul {
     list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
 }
 .copyright-text{
     color: grey;
     font-size: 15px;
 }
+.footer ul li,
+.footer ul li a {
+  color: white;
+  text-decoration: none;
+}
+.footer ul li:hover,
+.footer ul li a:hover {
+  color: #1db954;
+  text-decoration: underline;
+  transform: translateY(-2px);
+}
+
+  
