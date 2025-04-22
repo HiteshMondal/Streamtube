@@ -30,8 +30,21 @@ A modern YouTube-style streaming platform built with **React**, **Firebase**, an
 
 ## 🔧 Installation
 
-```bash
+
 git clone https://github.com/yourusername/streamtube.git
 cd streamtube
 npm install
+
+##🔑 Environment Variables
+
+Create a .env file in the root directory and add:
+VITE_FIREBASE_API_KEY=your_firebase_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_firebase_auth_domain
+VITE_FIREBASE_PROJECT_ID=your_project_id
+VITE_FIREBASE_STORAGE_BUCKET=your_bucket
+VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+VITE_FIREBASE_APP_ID=your_app_id
+VITE_TMDB_API_TOKEN=your_tmdb_token
+VITE_YOUTUBE_API_KEY=your_youtube_api_key
+
 
