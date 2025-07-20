@@ -9,10 +9,10 @@ spec:
   ingressClassName: nginx
   tls:
   - hosts:
-    - streamtube.local         # 👈 Replace with your domain or local test domain
+    - streamtube.local        
     secretName: streamtube-tls
   rules:
-  - host: streamtube.local     # 👈 Must match your DNS or /etc/hosts entry
+  - host: streamtube.local    
     http:
       paths:
       - path: /
