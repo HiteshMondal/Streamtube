@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: streamtube-ingress
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - streamtube.local         # 👈 Replace with your domain or local test domain
+    secretName: streamtube-tls
+  rules:
+  - host: streamtube.local     # 👈 Must match your DNS or /etc/hosts entry
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: streamtube-service
+            port:
+              number: 80
