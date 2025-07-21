@@ -1,0 +1,47 @@
+stages:
+  - checkout
+  - build
+  - push
+  - deploy
+
+variables:
+  IMAGE_NAME: "hiteshmondaldocker/streamtube-web"
+  IMAGE_TAG: "$CI_PIPELINE_IID"   # Similar to Jenkins BUILD_NUMBER
+  DOCKER_DRIVER: overlay2
+
+# Use Docker-in-Docker for build
+default:
+  image: docker:latest
+  services:
+    - docker:dind
+
+before_script:
+  - docker info
+
+checkout:
+  stage: checkout
+  script:
+    - echo "Checkout is automatic in GitLab"
+
+build_image:
+  stage: build
+  script:
+    - echo "$ENV_FILE" > .env
+    - docker build -t $IMAGE_NAME:$IMAGE_TAG .
+
+push_image:
+  stage: push
+  script:
+    - echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
+    - docker push $IMAGE_NAME:$IMAGE_TAG
+
+deploy_k8s:
+  stage: deploy
+  image: bitnami/kubectl:latest
+  script:
+    # Save kubeconfig to file
+    - echo "$KUBECONFIG_CONTENT" > kubeconfig
+    - export KUBECONFIG=$PWD/kubeconfig
+    - kubectl config current-context
+    - kubectl get nodes
+    - kubectl set image deployment/streamtube-deployment streamtube=$IMAGE_NAME:$IMAGE_TAG --namespace=default
