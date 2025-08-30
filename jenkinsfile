@@ -18,13 +18,14 @@ pipeline {
         script {
           withCredentials([file(credentialsId: 'streamtube-env', variable: 'ENV_FILE')]) {
             sh """
-              cp ${ENV_FILE} .env
+              cp \$ENV_FILE .env
               docker build -t ${IMAGE_NAME}:${IMAGE_TAG} .
             """
           }
         }
       }
     }
+
 
     stage('Push to Docker Hub') {
       steps {
@@ -43,12 +44,12 @@ pipeline {
       steps {
         script {
           withCredentials([file(credentialsId: 'kubeconfig-id', variable: 'KUBECONFIG')]) {
-            sh """
-              kubectl --kubeconfig=${KUBECONFIG} config current-context
-              kubectl --kubeconfig=${KUBECONFIG} get nodes
-              kubectl --kubeconfig=${KUBECONFIG} set image deployment/streamtube-deployment streamtube=${IMAGE_NAME}:${IMAGE_TAG} --namespace=default
-            """
-          }
+              sh """
+                kubectl --kubeconfig=\${KUBECONFIG} config current-context
+                kubectl --kubeconfig=\${KUBECONFIG} get nodes
+                kubectl --kubeconfig=\${KUBECONFIG} set image deployment/streamtube-deployment streamtube=${IMAGE_NAME}:${IMAGE_TAG} --namespace=default
+              """
+            }
         }
       }
     }
