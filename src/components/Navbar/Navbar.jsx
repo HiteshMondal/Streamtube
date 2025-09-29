@@ -26,7 +26,6 @@ const Navbar = ({ onCategoryChange}) => {
     } else {
       alert("Please enter a search term");
     }
-    navigate(`/search?query=${searchTerm}`);
   };
 
   const navRef = useRef();
